@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить мем - Мемополис</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">Мемополис</a>
+                <nav class="nav">
+                    <a href="index.html" class="nav__link">Главная</a>
+                    <a href="category.html" class="nav__link">Категории</a>
+                    <a href="about.html" class="nav__link">О нас</a>
+                    <a href="contacts.html" class="nav__link">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h1 class="main__title">Добавить свой мем</h1>
+            <p class="main__subtitle">Поделитесь своим шедевром с миром!</p>
+            
+            <div class="add-meme-form">
+                <form id="meme-form" enctype="multipart/form-data" method="POST" action="/upload-meme">
+                    <div class="form-group">
+                        <label for="meme-title">Название мема</label>
+                        <input type="text" id="meme-title" name="title" required placeholder="Например: Кот-программист">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meme-desc">Описание</label>
+                        <textarea id="meme-desc" name="description" required placeholder="Опишите ваш мем..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meme-category">Категория</label>
+                        <select id="meme-category" name="category">
+                            <option value="cats">Котики</option>
+                            <option value="it">IT-мемы</option>
+                            <option value="weekdays">Дни недели</option>
+                            <option value="animals">Животные</option>
+                            <option value="games">Игры</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meme-image">Изображение мема</label>
+                        <input type="file" id="meme-image" name="image" accept="image/*" required>
+                        <p class="form-hint">Максимальный размер файла: 5MB. Допустимые форматы: JPG, PNG, GIF</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="author-name">Ваше имя/ник</label>
+                        <input type="text" id="author-name" name="author" required placeholder="Как вас указать как автора?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="author-contact">Контакт для связи (необязательно)</label>
+                        <input type="text" id="author-contact" name="contact" placeholder="Email, Telegram и т.д.">
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                        <label for="agree-terms">Я согласен с <a href="#">правилами публикации</a> и подтверждаю, что имею права на это изображение</label>
+                    </div>
+                    
+                    <button type="submit" class="meme-link">Отправить мем</button>
+                </form>
+       
+                <div class="upload-status" id="upload-status"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>© 2024 Мемополис. Все права защищены.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">Telegram</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
